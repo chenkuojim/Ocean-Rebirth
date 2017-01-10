@@ -129,11 +129,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
 
-<div id="status">
-</div>
 
 
 
@@ -171,7 +167,11 @@
       <button class="mdl-button mdl-js-button mdl-button--raised " id="btnSignIn">Sign In</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnSignUp">Sign Up</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-button--blue-300" id ="btnSignOut">Sign Out</button>
-      <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
 
       <!-- Sign Information -->
       <div class="mdl-card__supporting-text" id="sign-info">No one login...</div>
