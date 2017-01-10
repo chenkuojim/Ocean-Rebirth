@@ -1,11 +1,11 @@
 $(document).ready(function(){
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAkNamvp8gvBmEBvppm5KveF1dn4UtNGPo",
-    authDomain: "myapp-ca2aa.firebaseapp.com",
-    databaseURL: "https://myapp-ca2aa.firebaseio.com",
-    storageBucket: "myapp-ca2aa.appspot.com",
-    messagingSenderId: "849405051354"
+    apiKey: "AIzaSyAOvApSrKcRRtL_ttURW4argKHFfU57i2c",
+    authDomain: "ocean-rebirth.firebaseapp.com",
+    databaseURL: "https://ocean-rebirth.firebaseio.com",
+    storageBucket: "ocean-rebirth.appspot.com",
+    messagingSenderId: "419533533465"
   };
   firebase.initializeApp(config);
 
