@@ -1,0 +1,273 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview Array is one of the core classes to native JavaScript. Array mixes in the jsx.collections.Enumerable class
+<span class='linenumber'>  4</span> 	*  which gives Array a lot more functionalilty. See jsx.collections.Enumerable to see all the additional methods on Array.
+<span class='linenumber'>  5</span> 	* @example
+<span class='linenumber'>  6</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  7</span> 
+<span class='linenumber'>  8</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  9</span> 	* Sets or returns the number of elements in an array.
+<span class='linenumber'> 10</span> 	* @name length
+<span class='linenumber'> 11</span> 	* @type {Number}
+<span class='linenumber'> 12</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 14</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$length$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 15</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 16</span> 	* Joins two or more arrays and returns the result.
+<span class='linenumber'> 17</span> 	* @example
+<span class='linenumber'> 18</span> 	["Tom", "Dick", "Harry"].concat(["Matt", "Annie", "Sam"]); -> ["Tom", "Dick", "Harry", "Matt", "Annie", "Sam"]
+<span class='linenumber'> 19</span> 	* @name concat
+<span class='linenumber'> 20</span> 	* @param {Array} _args One or more array objects to be joined to an array. Array#unshift(_args1, _args2,.....,_argsX) allowed.
+<span class='linenumber'> 21</span> 	* @return {Array}
+<span class='linenumber'> 22</span> 	* @function
+<span class='linenumber'> 23</span> 	* @memberOf Array
+<span class='linenumber'> 24</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 25</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 26</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$concat$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 27</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 28</span> 	* Puts all the elements of an array into a string. The elements are separated by a specified delimiter.
+<span class='linenumber'> 29</span> 	* @example
+<span class='linenumber'> 30</span> 	["Tom", "Dick", "Harry"].join(" - "); -> "Tom - Dick - Harry"
+<span class='linenumber'> 31</span> 	* @name join
+<span class='linenumber'> 32</span> 	* @param {String} [_sep] Specifies the separator to be used. Comma is the default separator.
+<span class='linenumber'> 33</span> 	* @function
+<span class='linenumber'> 34</span> 	* @memberOf Array
+<span class='linenumber'> 35</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 36</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 37</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$join$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_sep</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 38</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 39</span> 	* Removes and returns the last element of an array.
+<span class='linenumber'> 40</span> 	* @example
+<span class='linenumber'> 41</span> 	["Tom", "Dick", "Harry"].pop(); -> "Harry"
+<span class='linenumber'> 42</span> 	* @name pop
+<span class='linenumber'> 43</span> 	* @return {Object}
+<span class='linenumber'> 44</span> 	* @function
+<span class='linenumber'> 45</span> 	* @memberOf Array
+<span class='linenumber'> 46</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 47</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$pop$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 50</span> 	* Adds one or more elements to the end of an array and returns the new length.
+<span class='linenumber'> 51</span> 	* @example
+<span class='linenumber'> 52</span> 	["Tom", "Dick", "Harry"].push("Matt"); -> 4, contents = ["Tom", "Dick", "Harry", "Matt"]
+<span class='linenumber'> 53</span> 	* @name push
+<span class='linenumber'> 54</span> 	* @param {Object} _args One or more items. Array#push(_args1,.....,_argsX) allowed.
+<span class='linenumber'> 55</span> 	* @return {Number}
+<span class='linenumber'> 56</span> 	* @function
+<span class='linenumber'> 57</span> 	* @memberOf Array
+<span class='linenumber'> 58</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 59</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 60</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$push$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 61</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 62</span> 	* Reverses the order of the elements in an array.
+<span class='linenumber'> 63</span> 	* @example
+<span class='linenumber'> 64</span> 	["Tom", "Dick", "Harry"].reverse(); -> ["Harry", "Dick", "Tom"]
+<span class='linenumber'> 65</span> 	* @name reverse
+<span class='linenumber'> 66</span> 	* @function
+<span class='linenumber'> 67</span> 	* @memberOf Array
+<span class='linenumber'> 68</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 69</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 70</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$reverse$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 71</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 72</span> 	* Removes and returns the first element of an array.
+<span class='linenumber'> 73</span> 	* @example
+<span class='linenumber'> 74</span> 	["Tom", "Dick", "Harry"].shift(); -> "Tom", contents = ["Dick", "Harry"]
+<span class='linenumber'> 75</span> 	* @name shift
+<span class='linenumber'> 76</span> 	* @return {Object}
+<span class='linenumber'> 77</span> 	* @function
+<span class='linenumber'> 78</span> 	* @memberOf Array
+<span class='linenumber'> 79</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 80</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 81</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$shift$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 82</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 83</span> 	* Returns selected elements from an existing array.
+<span class='linenumber'> 84</span> 	* @example
+<span class='linenumber'> 85</span> 	["Tom", "Dick", "Harry"].slice(1,3); -> ["Dick", "Harry"]
+<span class='linenumber'> 86</span> 	* @name slice
+<span class='linenumber'> 87</span> 	* @param {Number} _start
+<span class='linenumber'> 88</span> 	* @param {Number} [_end]
+<span class='linenumber'> 89</span> 	* @return {Array}
+<span class='linenumber'> 90</span> 	* @function
+<span class='linenumber'> 91</span> 	* @memberOf Array
+<span class='linenumber'> 92</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 93</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 94</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$slice$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_start</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_end</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 95</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 96</span> 	* Sorts the elements of an array.
+<span class='linenumber'> 97</span> 	* @example
+<span class='linenumber'> 98</span> 	["Tom", "Dick", "Harry"].sort(); -> ["Dick", "Harry", "Tom"]
+<span class='linenumber'> 99</span> 	* @name sort
+<span class='linenumber'>100</span> 	* @param {Function} [_func] The block function of the sort implementation
+<span class='linenumber'>101</span> 	* @function
+<span class='linenumber'>102</span> 	* @memberOf Array
+<span class='linenumber'>103</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>104</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>105</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$sort$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_func</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>106</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>107</span> 	* Removes and adds new elements to an array.
+<span class='linenumber'>108</span> 	* @example
+<span class='linenumber'>109</span> 	&lt;div>["Tom", "Dick", "Harry", "Matt", "Annie", "Sam"].splice(2, 0, "Carson"); -> contents = ["Tom", "Dick", "Carson", "Harry", "Matt", "Annie", "Sam"]&lt;/div>
+<span class='linenumber'>110</span> 	&lt;div>["Tom", "Dick", "Harry", "Matt", "Annie", "Sam"].splice(2, 1, "Carson"); -> contents = ["Tom", "Dick", "Carson", "Matt", "Annie", "Sam"]&lt;/div>
+<span class='linenumber'>111</span> 	* @param {Number} _start Specify where to add/remove elements
+<span class='linenumber'>112</span> 	* @param {Number} _deleteCount Specify how many elements should be removed. Greater then zero.
+<span class='linenumber'>113</span> 	* @param {Object} [_args] Specify a new element to add to the array. Array#splice(_start, _deleteCount, _args1,.....,_argsX) allowed.
+<span class='linenumber'>114</span> 	* @name splice
+<span class='linenumber'>115</span> 	* @function
+<span class='linenumber'>116</span> 	* @memberOf Array
+<span class='linenumber'>117</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>118</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>119</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$splice$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_start</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_deleteCount</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>120</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>121</span> 	* Adds one or more elements to the beginning of an array and returns the new length.
+<span class='linenumber'>122</span> 	* @example
+<span class='linenumber'>123</span> 	["Tom", "Dick", "Harry"].unshift("Matt", "Annie", "Sam"); -> 6, contents = ["Tom", "Dick", "Harry", "Matt", "Annie", "Sam"]
+<span class='linenumber'>124</span> 	* @name unshift
+<span class='linenumber'>125</span> 	* @param {Object} _args1 The first element to add to the array.
+<span class='linenumber'>126</span> 	* @param {Object} [_args2] The second element to add to the array. Array#unshift(_args1, _args2,.....,_argsX) allowed.
+<span class='linenumber'>127</span> 	* @function
+<span class='linenumber'>128</span> 	* @memberOf Array
+<span class='linenumber'>129</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>130</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>131</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype._$unshift$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_args1</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_args2</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>132</span> 
+<span class='linenumber'>133</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>134</span> 	* Required by the &lt;code>jsx.collections.Enumerable&lt;/code> mixin. Calls &lt;code>Array#iterator(_block)&lt;/code> passing a value and index to the block.
+<span class='linenumber'>135</span> 	* @param {Function} _block. Parameters passed to the _block are Object and the Number.
+<span class='linenumber'>136</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>137</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype.each</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_block</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>138</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>139</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>140</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>141</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT">
+<span class='linenumber'>142</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>143</span> </span><span class="WHIT">			</span><span class="NAME">this.iterator</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>144</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>145</span> </span><span class="WHIT">				</span><span class="KEYW">try</span><span class="WHIT">
+<span class='linenumber'>146</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>147</span> </span><span class="WHIT">					</span><span class="NAME">_block</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">index</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>148</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>149</span> </span><span class="WHIT">				</span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>150</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>151</span> </span><span class="WHIT">					</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">e</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$continue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>152</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>153</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>154</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>155</span> </span><span class="WHIT">		</span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>156</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>157</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">e</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$break</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>158</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>159</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>160</span> 
+<span class='linenumber'>161</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>162</span> 	* Iterates through the array, executing the _block and passing a value from Array[index] as its parameter. Used by &lt;code>Array#each(_block)&lt;/code>.
+<span class='linenumber'>163</span> 	* @param {Function} _block. Parameter passed to the _block is the element object at the index.
+<span class='linenumber'>164</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>165</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype.iterator</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_block</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>166</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>167</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">this.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>168</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>169</span> </span><span class="WHIT">			</span><span class="NAME">_block</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>170</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>171</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>172</span> 
+<span class='linenumber'>173</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>174</span> 	* Returns the index location of the specified _object.
+<span class='linenumber'>175</span> 	* @example
+<span class='linenumber'>176</span> 	["Tom", "Dick", "Harry", "Matt", "Annie", "Sam"].indexOf("Annie"); -> 4
+<span class='linenumber'>177</span> 	* @param {Object} _object
+<span class='linenumber'>178</span> 	* @return {Number}
+<span class='linenumber'>179</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>180</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype.indexOf</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>181</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>182</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">this.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>183</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>184</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>185</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>186</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>187</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>188</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>189</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>190</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>191</span> 
+<span class='linenumber'>192</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>193</span> 	* Returns whether this object is equal to the specified _object.
+<span class='linenumber'>194</span> 	* @example
+<span class='linenumber'>195</span> 	["Tom", "Dick", "Harry"].equals(["Tom", "Dick", "Harry"]); -> true;
+<span class='linenumber'>196</span> 	* @param {Object} _object
+<span class='linenumber'>197</span> 	* @return {Boolean}
+<span class='linenumber'>198</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>199</span> </span><span class="WHIT">	</span><span class="NAME">Array.prototype.equals</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>200</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>201</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>202</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>203</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>204</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>205</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.getClass</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">isInstance</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>206</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>207</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>208</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>209</span> 
+<span class='linenumber'>210</span> </span><span class="WHIT">		</span><span class="COMM">// compare lengths</span><span class="WHIT">
+<span class='linenumber'>211</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.length</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">_object.length</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>212</span> 
+<span class='linenumber'>213</span> </span><span class="WHIT">		</span><span class="COMM">// compare entries in the indexes</span><span class="WHIT">
+<span class='linenumber'>214</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">this.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>215</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>216</span> </span><span class="WHIT">			</span><span class="COMM">// if both element are null pass them.</span><span class="WHIT">
+<span class='linenumber'>217</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">continue</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>218</span> 
+<span class='linenumber'>219</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">equals</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>220</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>221</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>222</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>223</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>224</span> 
+<span class='linenumber'>225</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>226</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>227</span> 
+<span class='linenumber'>228</span> 
+<span class='linenumber'>229</span> </span><span class="NAME">Array.prototype.invoke</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.invoke</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>230</span> </span><span class="NAME">Array.prototype.map</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.map</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>231</span> </span><span class="NAME">Array.prototype.detect</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.detect</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>232</span> </span><span class="NAME">Array.prototype.echo</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.echo</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>233</span> </span><span class="NAME">Array.prototype.zip</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.zip</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>234</span> </span><span class="NAME">Array.prototype.max</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.max</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>235</span> </span><span class="NAME">Array.prototype.toArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.toArray</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>236</span> </span><span class="NAME">Array.prototype.min</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.min</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>237</span> </span><span class="NAME">Array.prototype.convertToArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.convertToArray</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>238</span> </span><span class="NAME">Array.prototype.$break</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>239</span> </span><span class="NAME">Array.prototype.sortBy</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.sortBy</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>240</span> </span><span class="NAME">Array.prototype.select</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.select</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>241</span> </span><span class="NAME">Array.prototype.inject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.inject</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>242</span> </span><span class="NAME">Array.prototype.find</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.find</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>243</span> </span><span class="NAME">Array.prototype.collect</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.collect</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>244</span> </span><span class="NAME">Array.prototype.any</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.any</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>245</span> </span><span class="NAME">Array.prototype.entries</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.entries</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>246</span> </span><span class="NAME">Array.prototype.findAll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.findAll</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>247</span> </span><span class="NAME">Array.prototype.grep</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.grep</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>248</span> </span><span class="NAME">Array.prototype.pluck</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.pluck</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>249</span> </span><span class="NAME">Array.prototype.$continue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$continue</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>250</span> </span><span class="NAME">Array.prototype.partition</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.partition</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>251</span> </span><span class="NAME">Array.prototype.reject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.reject</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>252</span> </span><span class="NAME">Array.prototype.all</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.all</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>253</span> </span><span class="NAME">Array.prototype.member</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.member</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>254</span> </span><span class="NAME">Array.prototype.include</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.include</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>255</span> 
+<span class='linenumber'>256</span> </span><span class="NAME">Array.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>257</span> </span><span class="NAME">Array.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"Array"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>258</span> </span><span class="NAME">Array.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>259</span> </span><span class="NAME">Array.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.Enumerable"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>260</span> </span><span class="NAME">Array.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>261</span> </span><span class="NAME">Array.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.Enumerable"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>262</span> </span><span class="NAME">Array.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">Array.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>263</span> </span><span class="NAME">Array.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">Array.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>264</span> </span><span class="NAME">Array.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">Array.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>265</span> </span><span class="NAME">Array.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>266</span> </span></pre></body></html>

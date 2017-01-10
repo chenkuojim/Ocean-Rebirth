@@ -1,0 +1,43 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class NumericComparator
+<span class='linenumber'>  8</span> 	* @constructor
+<span class='linenumber'>  9</span> 	* @param {Boolean} _reversal
+<span class='linenumber'> 10</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 11</span> 	</span><span class="NAME">jsx.collections.comparators.NumericComparator</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 14</span> 	</span><span class="NAME">jsx.collections.comparators.NumericComparator.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_reversal</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 15</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 16</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='linenumber'> 17</span> 		* Comparator function used to compare number values.
+<span class='linenumber'> 18</span> 		*/</span><span class="WHIT">
+<span class='linenumber'> 19</span> </span><span class="WHIT">		</span><span class="NAME">this.compare</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_objectA</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_objectB</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 20</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 21</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.comparators.NumericComparatorUtil.compare</span><span class="PUNC">(</span><span class="NAME">_objectA</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_objectB</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_reversal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 22</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 23</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 24</span> 
+<span class='linenumber'> 25</span> 
+<span class='linenumber'> 26</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.comparators"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 27</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.comparators.NumericComparator"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 28</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 29</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.comparators.NumericComparatorUtil"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 30</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 31</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 32</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.comparators.NumericComparator.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 33</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.collections.comparators.NumericComparator.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 34</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.comparators.NumericComparator.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 35</span> </span><span class="NAME">jsx.collections.comparators.NumericComparator.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 36</span> </span></pre></body></html>

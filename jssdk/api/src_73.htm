@@ -1,0 +1,150 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class TestSuite
+<span class='linenumber'>  8</span> 	* @constructor
+<span class='linenumber'>  9</span> 	* @param {String} _name
+<span class='linenumber'> 10</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 11</span> 	</span><span class="NAME">jsx.tunit.framework.TestSuite</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 14</span> 	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_name</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 15</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 16</span> </span><span class="WHIT">		</span><span class="NAME">this.name</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_name</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 17</span> </span><span class="WHIT">		</span><span class="NAME">this.testClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_test</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 18</span> </span><span class="WHIT">		</span><span class="NAME">this.tests</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 19</span> 
+<span class='linenumber'> 20</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 21</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 22</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">superClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_test</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 23</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">names</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 24</span> </span><span class="WHIT">			</span><span class="KEYW">while</span><span class="PUNC">(</span><span class="KEYW">true</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 25</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 26</span> </span><span class="WHIT">				</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">methods</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">superClass.getDeclaredMethods</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 27</span> </span><span class="WHIT">				</span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">methods.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 28</span> </span><span class="WHIT">					</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.__isTestMethod__</span><span class="PUNC">(</span><span class="NAME">methods</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 29</span> </span><span class="WHIT">					</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 30</span> </span><span class="WHIT">						</span><span class="NAME">this.__addTestMethod__</span><span class="PUNC">(</span><span class="NAME">methods</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">names</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_test</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 31</span> </span><span class="WHIT">					</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 32</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 33</span> </span><span class="WHIT">				</span><span class="NAME">superClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">superClass.getSuperclass</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 34</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">superClass</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">superClass.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">equals</span><span class="PUNC">(</span><span class="STRN">"Object"</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 35</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 36</span> </span><span class="WHIT">					</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 37</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 38</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 39</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 40</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 41</span> 
+<span class='linenumber'> 42</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.__isTestMethod__</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_method</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 43</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 44</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">_method.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">indexOf</span><span class="PUNC">(</span><span class="STRN">"test"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 45</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 46</span> 
+<span class='linenumber'> 47</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.__addTestMethod__</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_method</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_names</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">name</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_method.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 50</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_names.contains</span><span class="PUNC">(</span><span class="NAME">name</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 51</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 52</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 53</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 54</span> 
+<span class='linenumber'> 55</span> </span><span class="WHIT">		</span><span class="NAME">_names.add</span><span class="PUNC">(</span><span class="NAME">name</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 56</span> 
+<span class='linenumber'> 57</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">test</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_test.newInstance</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 58</span> </span><span class="WHIT">		</span><span class="NAME">test.setName</span><span class="PUNC">(</span><span class="NAME">name</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 59</span> 
+<span class='linenumber'> 60</span> </span><span class="WHIT">		</span><span class="NAME">this.addTest</span><span class="PUNC">(</span><span class="NAME">test</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 61</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 62</span> 
+<span class='linenumber'> 63</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 64</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 65</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.name</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 66</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 67</span> 
+<span class='linenumber'> 68</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.getTestClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 69</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 70</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.testClass</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 71</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 72</span> 
+<span class='linenumber'> 73</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.countTestCases</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 74</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 75</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">count</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 76</span> </span><span class="WHIT">		</span><span class="NAME">this.tests.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 77</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 78</span> </span><span class="WHIT">			</span><span class="NAME">count</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_test.countTestCases</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 79</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 80</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">count</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 81</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 82</span> 
+<span class='linenumber'> 83</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.run</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_result</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 84</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 85</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 86</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_result</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 87</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 88</span> </span><span class="WHIT">			</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_result</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 89</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 90</span> </span><span class="WHIT">		</span><span class="KEYW">else</span><span class="WHIT">
+<span class='linenumber'> 91</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 92</span> </span><span class="WHIT">			</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.tunit.framework.TestResult</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 93</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 94</span> 
+<span class='linenumber'> 95</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 96</span> </span><span class="WHIT">		</span><span class="NAME">this.tests.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 97</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 98</span> </span><span class="WHIT">			</span><span class="NAME">me.runTest</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 99</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>100</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>101</span> 
+<span class='linenumber'>102</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.runTest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_result</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>103</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>104</span> </span><span class="WHIT">		</span><span class="NAME">_test.run</span><span class="PUNC">(</span><span class="NAME">_result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>105</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>106</span> 
+<span class='linenumber'>107</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.addTest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>108</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>109</span> </span><span class="WHIT">		</span><span class="NAME">this.tests.add</span><span class="PUNC">(</span><span class="NAME">_test</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>110</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>111</span> 
+<span class='linenumber'>112</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.addTestSuite</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_testClass</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>113</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>114</span> </span><span class="WHIT">		</span><span class="NAME">this.addTest</span><span class="PUNC">(</span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.tunit.framework.TestSuite</span><span class="PUNC">(</span><span class="NAME">_testClass</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>115</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>116</span> 
+<span class='linenumber'>117</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.testAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>118</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>119</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.tests.get</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>120</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>121</span> 
+<span class='linenumber'>122</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.testCount</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>123</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>124</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.tests.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>125</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>126</span> 
+<span class='linenumber'>127</span> </span><span class="WHIT">	</span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.getTests</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>128</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>129</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.tests</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>130</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>131</span> 
+<span class='linenumber'>132</span> 
+<span class='linenumber'>133</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.tunit.framework"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>134</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.tunit.framework.TestSuite"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>135</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>136</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.ArrayList"</span><span class="PUNC">,</span><span class="STRN">"jsx.tunit.framework.Test"</span><span class="PUNC">,</span><span class="STRN">"jsx.tunit.framework.TestResult"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>137</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.tunit.framework.Test"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>138</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>139</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.tunit.framework.TestSuite.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>140</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.tunit.framework.TestSuite.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>141</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.tunit.framework.TestSuite.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>142</span> </span><span class="NAME">jsx.tunit.framework.TestSuite.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>143</span> </span></pre></body></html>

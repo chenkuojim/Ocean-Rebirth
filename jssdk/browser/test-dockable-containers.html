@@ -1,0 +1,171 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+	ClassLoader.loadClass("jsx.logging.*");
+	ClassLoader.loadClass("jsx.dom.behavior.dockable.*");
+
+	function $(_id){return jsx.dom.Element.getElement(_id);}
+
+//]]>
+</script>
+<style type="text/css">
+<!--
+body
+{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
+.one
+{
+	width:auto;
+	margin:auto;
+}
+.two
+{
+	padding:100px 200px 0px
+}
+.three
+{
+	width:auto;
+	margin:0 0 1em;
+}
+
+.dk_root
+{
+}
+.dk_handle
+{
+	width:200px;
+	height:25px;
+}
+.dk_content
+{
+	width:200px;
+	height:100px;
+	margin-bottom:10px;
+}
+-->
+</style>
+</head>
+<body>
+
+<div class="one">
+	<div class="two">
+		<div class="three">
+
+			<div id="vertical">
+				<div class="dk_box">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow;">
+
+						</div>
+						<div class="dk_content" style="background-color:red;">
+
+						</div>
+					</div>
+				</div>
+				<div class="dk_box">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow;">
+
+						</div>
+						<div class="dk_content" style="background-color:blue;">
+
+						</div>
+					</div>
+				</div>
+				<div class="dk_box">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow;">
+
+						</div>
+						<div class="dk_content" style="background-color:green;">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="height:100px;"></div>
+
+			<div id="horizontal">
+				<div class="dk_box" style="float:left;">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow; margin-left:10px;">
+
+						</div>
+						<div class="dk_content" style="background-color:red; margin-left:10px;">
+
+						</div>
+					</div>
+				</div>
+				<div class="dk_box" style="float:left;">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow; margin-left:10px;">
+
+						</div>
+						<div class="dk_content" style="background-color:blue; margin-left:10px;">
+
+						</div>
+					</div>
+				</div>
+				<div class="dk_box" style="float:left;">
+					<div class="dk_root">
+						<div class="dk_handle" style="background-color:yellow; margin-left:10px;">
+
+						</div>
+						<div class="dk_content" style="background-color:green; margin-left:10px;">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+//	var logger = jsx.logging.LogManager.getLogger("docker");
+//	logger.setEffectiveLevel(jsx.logging.Level.DEBUG);
+//
+//	var layout = new jsx.logging.PatternLayout();
+//	layout.setConversionPattern("%r %d{DATE} [%-5p] %c - %m%n");
+//
+//	var appender = new jsx.logging.ConsoleAppender();
+//	appender.setLayout(layout);
+//	logger.addAppender(appender);
+
+	new jsx.dom.behavior.dockable.DockContainerDefault($("vertical"), "vertical","no").initDockable();
+	new jsx.dom.behavior.dockable.DockContainerDefault($("horizontal"), "horizontal","no").initDockable();
+
+</script>
+
+</body>
+</html>

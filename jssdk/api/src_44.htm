@@ -1,0 +1,236 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> 
+<span class='linenumber'>  7</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  8</span> 	* Returns Euler's constant (approx. 2.718).
+<span class='linenumber'>  9</span> 	* @name E
+<span class='linenumber'> 10</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 11</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="WHIT">	</span><span class="NAME">Math._$E$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 14</span> 	* Returns the natural logarithm of 10 (approx. 2.302).
+<span class='linenumber'> 15</span> 	* @name LN10
+<span class='linenumber'> 16</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 17</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 18</span> </span><span class="WHIT">	</span><span class="NAME">Math._$LN10$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 19</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 20</span> 	* Returns the natural logarithm of 2 (approx. 0.693).
+<span class='linenumber'> 21</span> 	* @name LN2
+<span class='linenumber'> 22</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 23</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 24</span> </span><span class="WHIT">	</span><span class="NAME">Math._$LN2$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 25</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 26</span> 	* Returns the base-10 logarithm of E (approx. 0.434).
+<span class='linenumber'> 27</span> 	* @name LOG10E
+<span class='linenumber'> 28</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 29</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 30</span> </span><span class="WHIT">	</span><span class="NAME">Math._$LOG10E$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 31</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 32</span> 	* Returns the base-2 logarithm of E (approx. 1.414).
+<span class='linenumber'> 33</span> 	* @name LOG2E
+<span class='linenumber'> 34</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 35</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 36</span> </span><span class="WHIT">	</span><span class="NAME">Math._$LOG2E$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 37</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 38</span> 	* Returns PI (approx. 3.14159).
+<span class='linenumber'> 39</span> 	* @name PI
+<span class='linenumber'> 40</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 41</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 42</span> </span><span class="WHIT">	</span><span class="NAME">Math._$PI$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 43</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 44</span> 	* Returns the square root of 1/2 (approx. 0.707).
+<span class='linenumber'> 45</span> 	* @name SQRT1_2
+<span class='linenumber'> 46</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 47</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="WHIT">	</span><span class="NAME">Math._$SQRT1_2$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 50</span> 	* Returns the square root of 2 (approx. 1.414).
+<span class='linenumber'> 51</span> 	* @name SQRT2
+<span class='linenumber'> 52</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 53</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 54</span> </span><span class="WHIT">	</span><span class="NAME">Math._$SQRT2$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 55</span> 
+<span class='linenumber'> 56</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 57</span> 	* Returns the absolute value of a number.
+<span class='linenumber'> 58</span> 	* @name Math.abs
+<span class='linenumber'> 59</span> 	* @param {Number}
+<span class='linenumber'> 60</span> 	* @return {Number}
+<span class='linenumber'> 61</span> 	* @function
+<span class='linenumber'> 62</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 63</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 64</span> </span><span class="WHIT">	</span><span class="NAME">Math._$abs$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 65</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 66</span> 	* Returns the arccosine of a number.
+<span class='linenumber'> 67</span> 	* @name Math.acos
+<span class='linenumber'> 68</span> 	* @param {Number}
+<span class='linenumber'> 69</span> 	* @return {Number}
+<span class='linenumber'> 70</span> 	* @function
+<span class='linenumber'> 71</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 72</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 73</span> </span><span class="WHIT">	</span><span class="NAME">Math._$acos$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 74</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 75</span> 	* Returns the arcsine of a number.
+<span class='linenumber'> 76</span> 	* @name Math.asin
+<span class='linenumber'> 77</span> 	* @param {Number}
+<span class='linenumber'> 78</span> 	* @return {Number}
+<span class='linenumber'> 79</span> 	* @function
+<span class='linenumber'> 80</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 81</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 82</span> </span><span class="WHIT">	</span><span class="NAME">Math._$asin$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 83</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 84</span> 	* Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians.
+<span class='linenumber'> 85</span> 	* @name Math.atan
+<span class='linenumber'> 86</span> 	* @param {Number}
+<span class='linenumber'> 87</span> 	* @param {Number}
+<span class='linenumber'> 88</span> 	* @return {Number}
+<span class='linenumber'> 89</span> 	* @function
+<span class='linenumber'> 90</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 91</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 92</span> </span><span class="WHIT">	</span><span class="NAME">Math._$atan$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_nY</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_nX</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 93</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 94</span> 	* Returns the angle theta of an (x,y) point as a numeric value between -PI and PI radians.
+<span class='linenumber'> 95</span> 	* @name Math.atan2
+<span class='linenumber'> 96</span> 	* @param {Number}
+<span class='linenumber'> 97</span> 	* @return {Number}
+<span class='linenumber'> 98</span> 	* @function
+<span class='linenumber'> 99</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>100</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>101</span> </span><span class="WHIT">	</span><span class="NAME">Math._$atan2$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>102</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>103</span> 	* Returns the value of a number rounded upwards to the nearest integer.
+<span class='linenumber'>104</span> 	* @name Math.ceil
+<span class='linenumber'>105</span> 	* @param {Number}
+<span class='linenumber'>106</span> 	* @return {Number}
+<span class='linenumber'>107</span> 	* @function
+<span class='linenumber'>108</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>109</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>110</span> </span><span class="WHIT">	</span><span class="NAME">Math._$ceil$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>111</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>112</span> 	* Returns the cosine of a number.
+<span class='linenumber'>113</span> 	* @name Math.cos
+<span class='linenumber'>114</span> 	* @param {Number}
+<span class='linenumber'>115</span> 	* @return {Number}
+<span class='linenumber'>116</span> 	* @function
+<span class='linenumber'>117</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>118</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>119</span> </span><span class="WHIT">	</span><span class="NAME">Math._$cos$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>120</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>121</span> 	* Returns the value of E^x.
+<span class='linenumber'>122</span> 	* @name Math.exp
+<span class='linenumber'>123</span> 	* @param {Number}
+<span class='linenumber'>124</span> 	* @return {Number}
+<span class='linenumber'>125</span> 	* @function
+<span class='linenumber'>126</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>127</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>128</span> </span><span class="WHIT">	</span><span class="NAME">Math._$exp$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>129</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>130</span> 	* Returns the value of a number rounded downwards to the nearest integer.
+<span class='linenumber'>131</span> 	* @name Math.floor
+<span class='linenumber'>132</span> 	* @param {Number}
+<span class='linenumber'>133</span> 	* @return {Number}
+<span class='linenumber'>134</span> 	* @function
+<span class='linenumber'>135</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>136</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>137</span> </span><span class="WHIT">	</span><span class="NAME">Math._$floor$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>138</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>139</span> 	* Returns the natural logarithm (base E) of a number.
+<span class='linenumber'>140</span> 	* @name Math.log
+<span class='linenumber'>141</span> 	* @param {Number}
+<span class='linenumber'>142</span> 	* @return {Number}
+<span class='linenumber'>143</span> 	* @function
+<span class='linenumber'>144</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>145</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>146</span> </span><span class="WHIT">	</span><span class="NAME">Math._$log$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>147</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>148</span> 	* Returns the number with the highest value of x and y.
+<span class='linenumber'>149</span> 	* @name Math.max
+<span class='linenumber'>150</span> 	* @param {Number} _args Math.max(_num1, _num2, ...._numX) allowed.
+<span class='linenumber'>151</span> 	* @return {Number}
+<span class='linenumber'>152</span> 	* @function
+<span class='linenumber'>153</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>154</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>155</span> </span><span class="WHIT">	</span><span class="NAME">Math._$max$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>156</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>157</span> 	* Returns the number with the lowest value of x and y.
+<span class='linenumber'>158</span> 	* @name Math.min
+<span class='linenumber'>159</span> 	* @param {Number} _args Math.min(_num1, _num2, ...._numX) allowed.
+<span class='linenumber'>160</span> 	* @return {Number}
+<span class='linenumber'>161</span> 	* @function
+<span class='linenumber'>162</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>163</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>164</span> </span><span class="WHIT">	</span><span class="NAME">Math._$min$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>165</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>166</span> 	* Returns the value of x to the power of y.
+<span class='linenumber'>167</span> 	* @name Math.pow
+<span class='linenumber'>168</span> 	* @param {Number}
+<span class='linenumber'>169</span> 	* @param {Number}
+<span class='linenumber'>170</span> 	* @return {Number}
+<span class='linenumber'>171</span> 	* @function
+<span class='linenumber'>172</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>173</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>174</span> </span><span class="WHIT">	</span><span class="NAME">Math._$pow$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_x</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_y</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>175</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>176</span> 	* Returns a random number between 0 and 1.
+<span class='linenumber'>177</span> 	* @name Math.randon
+<span class='linenumber'>178</span> 	* @return {Number}
+<span class='linenumber'>179</span> 	* @function
+<span class='linenumber'>180</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>181</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>182</span> </span><span class="WHIT">	</span><span class="NAME">Math._$randon$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>183</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>184</span> 	* Rounds a number to the nearest integer.
+<span class='linenumber'>185</span> 	* @name Math.round
+<span class='linenumber'>186</span> 	* @param {Number}
+<span class='linenumber'>187</span> 	* @return {Number}
+<span class='linenumber'>188</span> 	* @function
+<span class='linenumber'>189</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>190</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>191</span> </span><span class="WHIT">	</span><span class="NAME">Math._$round$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>192</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>193</span> 	* Returns the sine of a number.
+<span class='linenumber'>194</span> 	* @name Math.sin
+<span class='linenumber'>195</span> 	* @param {Number}
+<span class='linenumber'>196</span> 	* @return {Number}
+<span class='linenumber'>197</span> 	* @function
+<span class='linenumber'>198</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>199</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>200</span> </span><span class="WHIT">	</span><span class="NAME">Math._$sin$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>201</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>202</span> 	* Returns the square root of a number.
+<span class='linenumber'>203</span> 	* @name Math.sqrt
+<span class='linenumber'>204</span> 	* @param {Number}
+<span class='linenumber'>205</span> 	* @return {Number}
+<span class='linenumber'>206</span> 	* @function
+<span class='linenumber'>207</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>208</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>209</span> </span><span class="WHIT">	</span><span class="NAME">Math._$sqrt$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>210</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>211</span> 	* Returns the tangent of an angle.
+<span class='linenumber'>212</span> 	* @name Math.tan
+<span class='linenumber'>213</span> 	* @param {Number}
+<span class='linenumber'>214</span> 	* @return {Number}
+<span class='linenumber'>215</span> 	* @function
+<span class='linenumber'>216</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>217</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>218</span> </span><span class="WHIT">	</span><span class="NAME">Math._$tan$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_n</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>219</span> 
+<span class='linenumber'>220</span> </span><span class="NAME">Math.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>221</span> </span><span class="NAME">Math.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"Math"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>222</span> </span><span class="NAME">Math.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>223</span> </span><span class="NAME">Math.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>224</span> </span><span class="NAME">Math.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>225</span> </span><span class="NAME">Math.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>226</span> </span><span class="NAME">Math.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">Math.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>227</span> </span><span class="NAME">Math.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">Math.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>228</span> </span><span class="NAME">Math.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>229</span> </span></pre></body></html>

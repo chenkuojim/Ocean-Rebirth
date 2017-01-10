@@ -1,0 +1,120 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+
+	ClassLoader.loadClass("jsx.util.scheduler.Scheduler");
+	var sch = new jsx.util.scheduler.Scheduler();
+
+	function TestA()
+	{
+		this.counter = 1;
+	}
+	TestA.prototype.changeMsg=function(aNum)
+	{
+		var elem = document.getElementById('msg1');
+		elem.innerHTML = this.counter * aNum;
+		this.counter++;
+	}
+
+	function TestB()
+	{
+		this.counter = 1;
+	}
+	TestB.prototype.changeMsg=function()
+	{
+		var elem = document.getElementById('msg2');
+		elem.innerHTML = this.counter;
+		this.counter++;
+	}
+
+	var testA = new TestA();
+	var testB = new TestB();
+
+	var counter1 = 1;
+	var counter2 = 1;
+	function changeMsg1(aNum)
+	{
+		var elem = document.getElementById('msg3');
+		elem.innerHTML = counter1 * aNum;
+		counter1++;
+	}
+	function changeMsg2()
+	{
+		var elem = document.getElementById('msg4');
+		elem.innerHTML = counter2;
+		counter2++;
+	}
+
+	//]]>
+	</script>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td><span id='msg1'>0</span></td>
+		<td><input type='button' value='Add Task 1' onclick='sch.addTask(testA, testA.changeMsg, [1], 1000);'></td>
+		<td><input type='button' value='Delete Task 1' onclick='sch.deleteTask(testA.changeMsg)'></td>
+		<td><input type='button' value='Start Task 1' onclick='sch.startTask(testA.changeMsg);'></td>
+		<td><input type='button' value='Stop Task 1' onclick='sch.stopTask(testA.changeMsg);'></td>
+		<td><input type='button' value='Pause Task 1' onclick='sch.pauseTask(testA.changeMsg, 4000);'></td>
+	</tr>
+	<tr>
+		<td><span id='msg2'>0</span></td>
+		<td><input type='button' value='Add Task 2' onclick='sch.addTask(testB, testB.changeMsg, null, 1000);'></td>
+		<td><input type='button' value='Delete Task 2' onclick='sch.deleteTask(testB.changeMsg)'></td>
+		<td><input type='button' value='Start Task 2' onclick='sch.startTask(testB.changeMsg);'></td>
+		<td><input type='button' value='Stop Task 2' onclick='sch.stopTask(testB.changeMsg);'></td>
+		<td><input type='button' value='Pause Task 2' onclick='sch.pauseTask(testB.changeMsg, 4000);'></td>
+	</tr>
+	<tr>
+		<td><span id='msg3'>0</span></td>
+		<td><input type='button' value='Add Task 3' onclick='sch.addTask(null, changeMsg1, [1], 1000);'></td>
+		<td><input type='button' value='Delete Task 3' onclick='sch.deleteTask(changeMsg1)'></td>
+		<td><input type='button' value='Start Task 3' onclick='sch.startTask(changeMsg1);'></td>
+		<td><input type='button' value='Stop Task 3' onclick='sch.stopTask(changeMsg1);'></td>
+		<td><input type='button' value='Pause Task 3' onclick='sch.pauseTask(changeMsg1, 4000);'></td>
+	</tr>
+	<tr>
+		<td><span id='msg4'>0</span></td>
+		<td><input type='button' value='Add Task 4' onclick='sch.addTask(null, changeMsg2, null, 1000);'></td>
+		<td><input type='button' value='Delete Task 4' onclick='sch.deleteTask(changeMsg2)'></td>
+		<td><input type='button' value='Start Task 4' onclick='sch.startTask(changeMsg2);'></td>
+		<td><input type='button' value='Stop Task 4' onclick='sch.stopTask(changeMsg2);'></td>
+		<td><input type='button' value='Pause Task 4' onclick='sch.pauseTask(changeMsg2, 4000);'></td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td><input type='button' value='Start Scheduler' onclick='sch.start();'></td>
+		<td><input type='button' value='Pause Scheduler' onclick='sch.pause(4000);'></td>
+		<td><input type='button' value='Stop Scheduler' onclick='sch.stop();'></td>
+	</tr>
+</table>
+
+</body>
+</html>

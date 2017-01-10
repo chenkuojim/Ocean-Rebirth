@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'American Typewriter';
+  src: url(font/American Typewriter.ttf) format("truetype");
+}
+body {
+  background: url("../img/background.png");
+
+}
+
+
+h1{
+  color:#5772a5;
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 75px;
+  font-family:cursive;
+}
+h4{
+  color: #7c93c2;
+  font-family:monospace;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 45px;
+  font-family:cursive;
+}
+.mdl-card {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:30px;
+  height: 550px;
+
+}
+#mdl-card {
+
+
+}
+#mdl-card__title-text h1{
+text-align: center;
+
+}
+
+#sign-info {
+  color: #6AA3EB;
+  font-size: 120%;
+
+}
+
+#user-info {
+  padding: 0px;
+  width: 240px;
+  box-sizing: border-box;
+}
+
+#user-pic {
+  padding:10px;
+  width: 72px;
+  box-sizing: border-box;
+}
+
+
+
+input(type="password") {
+  font:large;
+  font-size:150%;
+}
+
+.demo-avatar {
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+}
+
+.message-pic{
+  width:30px;
+  height:30px;
+  padding: 0px;
+  margin:0px 10px 0px 0px;
+}
+.userpic{
+  margin:0px 0px 0px 10px;
+}
+
+.mdl-card__title-text{
+  font-family:monospace;
+}
+
+
+
+
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 10px;
+  height: 400px;
+  overflow: auto;
+}
+ul li {
+    font-family: monospace;
+    font-size: 150%;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+ul li:last-child {
+    margin: 0px;
+}
+ul .example-chat-username {
+    margin-right: 10px;
+}
+.mdl-grid{
+  margin: 0px;
+  height:auto;
+}
+
+.mine{
+  text-align: right;
+}
+.imginfo-color{
+  height:20px;
+  margin: 0px;
+  padding: 0px;
+}
+#example-messages li
+{
+  color: #333333;
+}
+.example-chat-username{
+  color:#6AA3EB;
+}

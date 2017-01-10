@@ -1,0 +1,9 @@
+DefaultAppenderTest
+ConsoleAppenderTest
+DefaultLayoutTest
+PatternLayoutTest
+LevelTest
+LogEventTest
+LoggerTest
+LogConfigurationTest
+LoggingTests

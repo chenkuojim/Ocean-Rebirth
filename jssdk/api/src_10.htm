@@ -1,0 +1,121 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview This class implements the Set interface, backed by a jsx.collections.HashMap instance.
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class HashSet
+<span class='linenumber'>  8</span> 	* @constructor
+<span class='linenumber'>  9</span> 	* @extends jsx.collections.AbstractSet
+<span class='linenumber'> 10</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 11</span> 	</span><span class="NAME">jsx.collections.HashSet</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="NAME">jsx.collections.HashSet.prototype</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractSet</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="NAME">jsx.collections.HashSet.prototype.constructor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.HashSet</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 14</span> </span><span class="NAME">jsx.collections.HashSet.superclass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractSet.prototype</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 15</span> 
+<span class='linenumber'> 16</span> 	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 17</span> 	</span><span class="NAME">jsx.collections.HashSet.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_collection</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 18</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 19</span> 		</span><span class="NAME">this.entryItems</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.HashMap</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 20</span> 
+<span class='linenumber'> 21</span> 		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_present</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 22</span> 
+<span class='linenumber'> 23</span> 		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 24</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_collection</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 25</span> 		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 26</span> 			</span><span class="NAME">_collection.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 27</span> 			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 28</span> 				</span><span class="NAME">me.entryItems.put</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_present</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 29</span> 			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 30</span> 		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 31</span> 
+<span class='linenumber'> 32</span> 		</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 33</span> 		</span><span class="NAME">this.__dummy__</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 34</span> 		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 35</span> 			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_present</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 36</span> 		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 37</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 38</span> 
+<span class='linenumber'> 39</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 40</span> 	* Returns a list view of the entries.
+<span class='linenumber'> 41</span> 	* @return {jsx.collection.List}
+<span class='linenumber'> 42</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 43</span> 	</span><span class="NAME">jsx.collections.HashSet.prototype.entryList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 44</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 45</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 46</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 47</span> 
+<span class='linenumber'> 48</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 49</span> 	* Adds the specified element to this set if it is not already present.
+<span class='linenumber'> 50</span> 	* @param {Object} _object
+<span class='linenumber'> 51</span> 	* @return {Boolean}
+<span class='linenumber'> 52</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 53</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.add</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 54</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 55</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.entryItems.put</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.__dummy__</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 56</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 57</span> 
+<span class='linenumber'> 58</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 59</span> 	* Removes all of the elements from this set.
+<span class='linenumber'> 60</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 61</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.clear</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 62</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 63</span> 		</span><span class="NAME">this.entryItems.clear</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 64</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 65</span> 
+<span class='linenumber'> 66</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 67</span> 	* Returns true if this set contains the specified element.
+<span class='linenumber'> 68</span> 	* @return {Boolean}
+<span class='linenumber'> 69</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 70</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.contains</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 71</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 72</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems.containsKey</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 73</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 74</span> 
+<span class='linenumber'> 75</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 76</span> 	* Returns true if this set contains no elements.
+<span class='linenumber'> 77</span> 	* @return {Boolean}
+<span class='linenumber'> 78</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 79</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.isEmpty</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 80</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 81</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems.isEmpty</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 82</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 83</span> 
+<span class='linenumber'> 84</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 85</span> 	* Removes the specified element from this set if it is present.
+<span class='linenumber'> 86</span> 	* @param {Object} _object
+<span class='linenumber'> 87</span> 	* @return {Bolean}
+<span class='linenumber'> 88</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 89</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.remove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 90</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 91</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.entryItems.remove</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NAME">this.__dummy__</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 92</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 93</span> 
+<span class='linenumber'> 94</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 95</span> 	* Returns the number of elements in this set.
+<span class='linenumber'> 96</span> 	* @return {Number}
+<span class='linenumber'> 97</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 98</span>     </span><span class="NAME">jsx.collections.HashSet.prototype.size</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 99</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>100</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>101</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>102</span> 
+<span class='linenumber'>103</span> 
+<span class='linenumber'>104</span> </span><span class="NAME">jsx.collections.HashSet.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>105</span> </span><span class="NAME">jsx.collections.HashSet.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.HashSet"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>106</span> </span><span class="NAME">jsx.collections.HashSet.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.AbstractSet"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>107</span> </span><span class="NAME">jsx.collections.HashSet.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.HashMap"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.Set"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.AbstractSet"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>108</span> </span><span class="NAME">jsx.collections.HashSet.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.Set"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>109</span> </span><span class="NAME">jsx.collections.HashSet.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>110</span> </span><span class="NAME">jsx.collections.HashSet.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.HashSet.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>111</span> </span><span class="NAME">jsx.collections.HashSet.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.collections.HashSet.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>112</span> </span><span class="NAME">jsx.collections.HashSet.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.HashSet.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>113</span> </span><span class="NAME">jsx.collections.HashSet.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>114</span> </span></pre></body></html>

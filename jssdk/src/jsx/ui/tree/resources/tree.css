@@ -1,0 +1,71 @@
+.tree-table-item
+{
+}
+.tree-table-item td
+{
+	white-space:nowrap;
+}
+
+.tree-image
+{
+	width:19px;
+	height:16px;
+	float:left;
+	overflow:hidden;
+	background-repeat:no-repeat;
+}
+.tree-image-empty
+{
+}
+.tree-image-line
+{
+	background-image:url("tree-line.gif");
+}
+.tree-image-join
+{
+	background-image:url("tree-join.gif");
+}
+.tree-image-joinbottom
+{
+	background-image:url("tree-joinbottom.gif");
+}
+.tree-image-plus
+{
+	background-image:url("tree-plus.gif");
+}
+.tree-image-plusbottom
+{
+	background-image:url("tree-plusbottom.gif");
+}
+.tree-image-minus
+{
+	background-image:url("tree-minus.gif");
+}
+.tree-image-minusbottom
+{
+	background-image:url("tree-minusbottom.gif");
+}
+.tree-image-plusroot
+{
+	background-image:url("tree-plusroot.gif");
+}
+.tree-image-minusroot
+{
+	background-image:url("tree-minusroot.gif");
+}
+
+.tree-node
+{
+	font-family:Verdana,Tahoma;
+	color:#000000;
+	text-decoration:none;
+	font-size:12px;
+}
+.tree-node-not-selected
+{
+	font-weight:normal;
+}
+.tree-node-selected
+{
+	font-weight:bold;
+}

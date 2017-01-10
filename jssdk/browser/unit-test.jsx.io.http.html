@@ -1,0 +1,46 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+	ClassLoader.loadClass("jsx.tunit.framework.*");
+	ClassLoader.loadClass("jsx.tunit.runner.*");
+	ClassLoader.loadClass("jsx.tunit.htmlgui.*");
+	ClassLoader.loadClass("jsx.dom.*");
+	ClassLoader.loadClass("test.jsx.io.http.*");
+	//]]>
+	</script>
+</head>
+<body>
+<div id="results"></div>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+//	ClassLoader.loadClass("jsx.ui.RuntimeConsole");
+//	var rc = new jsx.ui.RuntimeConsole();
+
+	new jsx.tunit.htmlgui.TestRunner(jsx.dom.Element.getElement("results")).runSuite(test.jsx.io.http.HttpTests.klass);
+//]]>
+</script>
+</body>
+</html>

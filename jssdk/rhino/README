@@ -1,0 +1,9 @@
+Example of running the unit test from rhino
+
+# Navigate to the directory where rhino (js.jar) is installed
+
+# run a single test class
+java -jar js.jar unit-test.single.test.js test.jsx.lang.ClassTest
+
+# run a suite of test classes
+java -jar js.jar unit-test.jsx.js

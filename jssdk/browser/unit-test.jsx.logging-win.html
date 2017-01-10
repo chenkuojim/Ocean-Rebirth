@@ -1,0 +1,68 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+	ClassLoader.loadClass("jsx.tunit.framework.*");
+	ClassLoader.loadClass("jsx.tunit.runner.*");
+	ClassLoader.loadClass("jsx.tunit.htmlgui.*");
+	ClassLoader.loadClass("jsx.dom.*");
+	ClassLoader.loadClass("jsx.logging.*");
+	ClassLoader.loadClass("test.jsx.logging.*");
+
+	ClassLoader.loadClass("jsx.util.scheduler.*");
+	//]]>
+	</script>
+</head>
+<body>
+<div id="results"></div>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+
+		var logger = jsx.logging.LogManager.getLogger("com.mycomp.mydepart.myapp.LoggingClass");
+		logger.setEffectiveLevel(jsx.logging.Level.TRACE);
+
+		var layout = new jsx.logging.PatternLayout();
+		layout.setConversionPattern("%r %d{DATE} [%-5p] %c - %m%n");
+
+		var appender = new jsx.logging.WindowConsoleAppender();
+		appender.setLayout(layout);
+		logger.addAppender(appender);
+
+		logger.trace("this is a test trace");
+		logger.debug("this is a test debug");
+		logger.info("this is a test info");
+		logger.warn("this is a test warn");
+		logger.error("this is a test error");
+		logger.fatal("this is a test fatal");
+
+		var _scheduler = new jsx.util.scheduler.Scheduler();
+		_scheduler.addTask(logger, logger.debug, ["hello"], 1000);
+		_scheduler.start();
+ 		_scheduler.startTask(logger.debug);
+
+//]]>
+</script>
+</body>
+</html>

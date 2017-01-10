@@ -1,0 +1,343 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview &lt;code>jsx.collections.AbstractMap&lt;/code> is an abstract class used as a base implementation for &lt;code>jsx.collections.Map&lt;/code> classes.
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class AbstractMap
+<span class='linenumber'>  8</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  9</span> 	</span><span class="NAME">jsx.collections.AbstractMap</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 10</span> </span><span class="WHIT">
+<span class='linenumber'> 11</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 12</span> 	</span><span class="NAME">jsx.collections.AbstractMap.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 13</span> 
+<span class='linenumber'> 14</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 15</span> 	* Returns a list view of the mappings contained in this map.
+<span class='linenumber'> 16</span> 	* @return {jsx.collection.List}
+<span class='linenumber'> 17</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 18</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.entryList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">'AbstractMap.entryList is abstract'</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 19</span> 
+<span class='linenumber'> 20</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 21</span> 	* Associates the specified value with the specified key in this map. Returns previous value associated with specified key,
+<span class='linenumber'> 22</span> 	*  or null  if there was no mapping for key.
+<span class='linenumber'> 23</span> 	* @param {Object} _key
+<span class='linenumber'> 24</span> 	* @param {Object} _value
+<span class='linenumber'> 25</span> 	* @return {Object}
+<span class='linenumber'> 26</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 27</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.put</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_value</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">'AbstractMap.put is abstract'</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 28</span> 
+<span class='linenumber'> 29</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 30</span> 	* Required by the jsx.collections.Enumerable mixin. Calls AbstractMap#iterator(_block) passing a {Object}value and {Object}key to the block.
+<span class='linenumber'> 31</span> 	* @param {Function} _block. Parameters passed to the _block are &lt;value>Object, &lt;key>Object.
+<span class='linenumber'> 32</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 33</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.each</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_block</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 34</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 35</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 36</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT">
+<span class='linenumber'> 37</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 38</span> </span><span class="WHIT">			</span><span class="NAME">this.iterator</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_entry</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 39</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 40</span> </span><span class="WHIT">				</span><span class="KEYW">try</span><span class="WHIT">
+<span class='linenumber'> 41</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 42</span> </span><span class="WHIT">					</span><span class="NAME">_block</span><span class="PUNC">(</span><span class="NAME">_entry.value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_entry.key</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 43</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 44</span> </span><span class="WHIT">				</span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 45</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 46</span> </span><span class="WHIT">					</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$continue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 47</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 50</span> </span><span class="WHIT">		</span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 51</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 52</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$break</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 53</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 54</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 55</span> 
+<span class='linenumber'> 56</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 57</span> 	* Iterate over the map of entries.
+<span class='linenumber'> 58</span> 	* @param {Function} _block The function to execute for every key-value mapping in the map.
+<span class='linenumber'> 59</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 60</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.iterator</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_block</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 61</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 62</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_entries</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 63</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">this.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 64</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 65</span> </span><span class="WHIT">			</span><span class="NAME">_block</span><span class="PUNC">(</span><span class="NAME">_entries.get</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 66</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 67</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 68</span> 
+<span class='linenumber'> 69</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 70</span> 	* Removes and returns the mapping for this key from this map if it is present.
+<span class='linenumber'> 71</span> 	* @param {Object} _key
+<span class='linenumber'> 72</span> 	* @return {Object}
+<span class='linenumber'> 73</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 74</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.remove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 75</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 76</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.keys</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">indexOf</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 77</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">&lt;=</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 78</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 79</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 80</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 81</span> 
+<span class='linenumber'> 82</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 83</span> 
+<span class='linenumber'> 84</span> </span><span class="WHIT">		</span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">removeAt</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 85</span> 
+<span class='linenumber'> 86</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_value</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 87</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 88</span> 
+<span class='linenumber'> 89</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 90</span> 	* Copies all of the mappings from the specified map to this map.
+<span class='linenumber'> 91</span> 	* @param {jsx.collections.Map} _map
+<span class='linenumber'> 92</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 93</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.putAll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_map</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 94</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 95</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 96</span> </span><span class="WHIT">		</span><span class="NAME">_map.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_entry</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 97</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 98</span> </span><span class="WHIT">			</span><span class="NAME">me.put</span><span class="PUNC">(</span><span class="NAME">_entry.key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_entry.value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 99</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>100</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>101</span> 
+<span class='linenumber'>102</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>103</span> 	* Removes all mappings from this map.
+<span class='linenumber'>104</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>105</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.clear</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>106</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>107</span> </span><span class="WHIT">		</span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">clear</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>108</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>109</span> 
+<span class='linenumber'>110</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>111</span> 	* Returns the value to which this map maps the specified key.
+<span class='linenumber'>112</span> 	* @param {Object} _key
+<span class='linenumber'>113</span> 	* @return {Object}
+<span class='linenumber'>114</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>115</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.get</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>116</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>117</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>118</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>119</span> </span><span class="WHIT">		</span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_entry</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>120</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>121</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>122</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>123</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_entry.key</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>124</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>125</span> </span><span class="WHIT">					</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_entry.value</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>126</span> </span><span class="WHIT">					</span><span class="NAME">me.$break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>127</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>128</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>129</span> </span><span class="WHIT">			</span><span class="KEYW">else</span><span class="WHIT">
+<span class='linenumber'>130</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>131</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_entry.key</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">_entry.key.equals</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>132</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>133</span> </span><span class="WHIT">					</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_entry.value</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>134</span> </span><span class="WHIT">					</span><span class="NAME">me.$break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>135</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>136</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>137</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>138</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">result</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>139</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>140</span> 
+<span class='linenumber'>141</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>142</span> 	* Returns a List view of the keys contained in this map.
+<span class='linenumber'>143</span> 	* @return {jsx.collections.List}
+<span class='linenumber'>144</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>145</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.keys</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>146</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>147</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">list</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>148</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">items</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">pluck</span><span class="PUNC">(</span><span class="STRN">"key"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>149</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">items.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>150</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>151</span> </span><span class="WHIT">			</span><span class="NAME">list.add</span><span class="PUNC">(</span><span class="NAME">items</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>152</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>153</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">list</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>154</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>155</span> 
+<span class='linenumber'>156</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>157</span> 	* Returns a List view of the values contained in this map.
+<span class='linenumber'>158</span> 	* @return {jsx.collections.List}
+<span class='linenumber'>159</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>160</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.values</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>161</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>162</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">list</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>163</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">items</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">pluck</span><span class="PUNC">(</span><span class="STRN">"value"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>164</span> </span><span class="WHIT">		</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">items.length</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>165</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>166</span> </span><span class="WHIT">			</span><span class="NAME">list.add</span><span class="PUNC">(</span><span class="NAME">items</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>167</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>168</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">list</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>169</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>170</span> 
+<span class='linenumber'>171</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>172</span> 	* Returns true if this map contains a mapping for the specified key.
+<span class='linenumber'>173</span> 	* @param {Object} _key
+<span class='linenumber'>174</span> 	* @return {Boolean]
+<span class='linenumber'>175</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>176</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.containsKey</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>177</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>178</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.keys</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">contains</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>179</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>180</span> 
+<span class='linenumber'>181</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>182</span> 	* Returns true if this map maps one or more keys to this value.
+<span class='linenumber'>183</span> 	* @param {Object} _value
+<span class='linenumber'>184</span> 	* @return {Boolean]
+<span class='linenumber'>185</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>186</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.containsValue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>187</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>188</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.values</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">contains</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>189</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>190</span> 
+<span class='linenumber'>191</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>192</span> 	* Returns true if this map contains no key-value mappings.
+<span class='linenumber'>193</span> 	* @return {Boolean}
+<span class='linenumber'>194</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>195</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.isEmpty</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>196</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>197</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>198</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>199</span> 
+<span class='linenumber'>200</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>201</span> 	* Returns the number of key-value mappings in this map.
+<span class='linenumber'>202</span> 	* @return {Number}
+<span class='linenumber'>203</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>204</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.size</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>205</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>206</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>207</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>208</span> 
+<span class='linenumber'>209</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>210</span> 	* Returns a String representation of a jsx.collections.Map.
+<span class='linenumber'>211</span> 	* @return {Stirng}
+<span class='linenumber'>212</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>213</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.toString</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>214</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>215</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>216</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">sb</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.StringBuffer</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>217</span> </span><span class="WHIT">		</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">"{"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>218</span> 
+<span class='linenumber'>219</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>220</span> </span><span class="WHIT">		</span><span class="NAME">this.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_key</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>221</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>222</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>223</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>224</span> </span><span class="WHIT">				</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="NAME">_key.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>225</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>226</span> </span><span class="WHIT">			</span><span class="KEYW">else</span><span class="WHIT">
+<span class='linenumber'>227</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>228</span> </span><span class="WHIT">				</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">"null"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>229</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>230</span> 
+<span class='linenumber'>231</span> </span><span class="WHIT">			</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">" = "</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>232</span> 
+<span class='linenumber'>233</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>234</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>235</span> </span><span class="WHIT">				</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="NAME">_value.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>236</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>237</span> </span><span class="WHIT">			</span><span class="KEYW">else</span><span class="WHIT">
+<span class='linenumber'>238</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>239</span> </span><span class="WHIT">				</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">"null"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>240</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>241</span> 
+<span class='linenumber'>242</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">me.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">", "</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>243</span> </span><span class="WHIT">			</span><span class="NAME">index</span><span class="PUNC">++</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>244</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>245</span> 
+<span class='linenumber'>246</span> </span><span class="WHIT">		</span><span class="NAME">sb.append</span><span class="PUNC">(</span><span class="STRN">"}"</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>247</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">sb.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>248</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>249</span> 
+<span class='linenumber'>250</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>251</span> 	* Returns whether this Map is equal to the Map List.
+<span class='linenumber'>252</span> 	* @param {Object} _object
+<span class='linenumber'>253</span> 	* @return {Boolean}
+<span class='linenumber'>254</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>255</span> </span><span class="WHIT">	</span><span class="NAME">jsx.collections.AbstractMap.prototype.equals</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>256</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>257</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>258</span> 
+<span class='linenumber'>259</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>260</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>261</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>262</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>263</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.getClass</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">isInstance</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>264</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>265</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>266</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>267</span> 
+<span class='linenumber'>268</span> </span><span class="WHIT">		</span><span class="COMM">// compare lengths</span><span class="WHIT">
+<span class='linenumber'>269</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">_object.size</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>270</span> 
+<span class='linenumber'>271</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>272</span> </span><span class="WHIT">		</span><span class="NAME">this.entryList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_entry</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>273</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>274</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_key</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_entry.key</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>275</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_entry.value</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>276</span> 
+<span class='linenumber'>277</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>278</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>279</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="PUNC">(</span><span class="NAME">_object.get</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">t.containsKey</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>280</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>281</span> </span><span class="WHIT">					</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>282</span> </span><span class="WHIT">					</span><span class="NAME">me.$break</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>283</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>284</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>285</span> </span><span class="WHIT">			</span><span class="KEYW">else</span><span class="WHIT">
+<span class='linenumber'>286</span> </span><span class="WHIT">			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>287</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">_value.equals</span><span class="PUNC">(</span><span class="NAME">_object.get</span><span class="PUNC">(</span><span class="NAME">_key</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>288</span> </span><span class="WHIT">				</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>289</span> </span><span class="WHIT">					</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>290</span> </span><span class="WHIT">					</span><span class="NAME">me.$break</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>291</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>292</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>293</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>294</span> 
+<span class='linenumber'>295</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">result</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>296</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>297</span> 
+<span class='linenumber'>298</span> 
+<span class='linenumber'>299</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.invoke</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.invoke</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>300</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.map</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.map</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>301</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.detect</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.detect</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>302</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.echo</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.echo</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>303</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.zip</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.zip</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>304</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.max</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.max</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>305</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.toArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.toArray</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>306</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.min</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.min</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>307</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.convertToArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.convertToArray</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>308</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.$break</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>309</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.sortBy</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.sortBy</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>310</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.select</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.select</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>311</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.inject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.inject</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>312</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.find</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.find</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>313</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.collect</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.collect</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>314</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.any</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.any</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>315</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.entries</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.entries</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>316</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.findAll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.findAll</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>317</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.grep</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.grep</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>318</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.pluck</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.pluck</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>319</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.$continue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.$continue</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>320</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.partition</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.partition</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>321</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.reject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.reject</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>322</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.all</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.all</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>323</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.member</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.member</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>324</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.include</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.Enumerable.include</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>325</span> 
+<span class='linenumber'>326</span> </span><span class="NAME">jsx.collections.AbstractMap.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>327</span> </span><span class="NAME">jsx.collections.AbstractMap.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.AbstractMap"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>328</span> </span><span class="NAME">jsx.collections.AbstractMap.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>329</span> </span><span class="NAME">jsx.collections.AbstractMap.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.ArrayList"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.Map"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.Enumerable"</span><span class="PUNC">,</span><span class="STRN">"jsx.lang.StringBuffer"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>330</span> </span><span class="NAME">jsx.collections.AbstractMap.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.Map"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>331</span> </span><span class="NAME">jsx.collections.AbstractMap.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.Enumerable"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>332</span> </span><span class="NAME">jsx.collections.AbstractMap.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractMap.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>333</span> </span><span class="NAME">jsx.collections.AbstractMap.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.collections.AbstractMap.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>334</span> </span><span class="NAME">jsx.collections.AbstractMap.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractMap.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>335</span> </span><span class="NAME">jsx.collections.AbstractMap.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.AbstractMap must implement jsx.collections.Map.entrySet"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.AbstractMap must implement jsx.collections.Map.keySet"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>336</span> </span></pre></body></html>

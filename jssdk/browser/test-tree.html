@@ -1,0 +1,119 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+
+		ClassLoader.loadClass("jsx.ui.tree.Trees");
+		var allTrees = new jsx.ui.tree.Trees("allTrees");
+
+		function echo(aText)
+		{
+			document.getElementById('text').innerHTML = aText;
+		}
+
+	//]]>
+	</script>
+</head>
+
+<body>
+
+	<span id="text"></span>
+
+	<br />
+
+	<table cellspacing="0" cellpadding="0" border="0" width="100%">
+		<tr>
+			<td valign="top" width='20%'>
+				<div id="tree1"></div>
+				<div id="tree2"></div>
+			</td>
+			<td valign="top">
+				<form>
+					<img src="../src/jsx/ui/tree/resources/tree-expandall.gif" onclick="allTrees.treeCache.get(0).expandAll();" />
+					<img src="../src/jsx/ui/tree/resources/tree-collapseall.gif" onclick="allTrees.treeCache.get(0).collapseAll();" />
+					<input type="text" id="newNode" />
+					<input type="button" value="Add Node"
+						onclick="allTrees.addNode(0, [document.getElementById('newNode').value, {link:'', callbackForSelect:{obj:null, func:echo, args:[document.getElementById('newNode').value]}}]);" />
+				</form>
+			</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+/**/
+
+		var items=
+		[
+			['Root', {link:''},
+				['Node 1-1', {link:''}],
+				['Node 1-2', {link:''}],
+				['Node 1-3', {link:''},
+					['Node 2-1', {link:''}],
+					['Node 2-2', {link:''}],
+					['Node 2-3', {link:''}],
+					['Node 2-4', {link:''}],
+					['Node 2-5', {link:''},
+						['Node 3-1', {link:''}],
+						['Node 3-2', {link:''}],
+						['Node 3-3', {link:''}],
+						['Node 3-4', {link:''}],
+						['Node 3-5', {link:''}]
+					]
+				],
+				['Node 1-4', {link:''}],
+				['Node 1-5', {link:''},
+					['Node 2-6', {link:''}],
+					['Node 2-7', {link:''}]
+				]
+			]
+		];
+
+		allTrees.addTree(items, 'tree1');
+		allTrees.addTree(items, 'tree2');
+
+		allTrees.treeCache.get(0).selectNode(13);
+		allTrees.addNodes(0, [
+							['Microsoft', {link:''}],
+							['Pepsi', {link:''}],
+							['Fed-Ex', {link:''}],
+							['Coca-Cola', {link:''}],
+							['Cadbury', {link:''}],
+							['A&M Records', {link:''}],
+							['ABN AMRO', {link:''}],
+							['Accenture', {link:''}],
+							['Adecco', {link:''}],
+							['Adidas', {link:''}],
+							['Adobe', {link:''}],
+							['Ahold', {link:''}],
+							['Akai', {link:''}],
+							['Akamai', {link:''}]
+						]);
+
+	//]]>
+	</script>
+
+</body>
+</html>

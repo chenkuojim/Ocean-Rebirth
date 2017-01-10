@@ -1,0 +1,102 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+</head>
+
+<body>
+
+	<script type="text/javascript" language="javascript">
+	//<![CDATA[
+
+	ClassLoader.loadClass("jsx.util.session.Session");
+	var session = new jsx.util.session.Session("test-123123", 8);
+/*
+	var test_one = session.getAttribute("one")
+	if(test_one)
+	{
+		alert("test_one does exist");
+	}
+	else
+	{
+		alert("test_one does not exist - adding to session");
+		session.setAttribute("one", 1);
+	}
+*/
+
+	session.setAttribute("1", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("2", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("3", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("4", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("5", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("6", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("7", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("8", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("9", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("10", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("11", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("12", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("13", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("14", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("15", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("16", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("17", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("18", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("19", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+	session.setAttribute("20", "asdfasdfadsf asdfasdf asdfasdf asdfasdfasd asdfasdfa asdfasdfasdf asdfasdfasd fasdfasdfasd fasdfasdf");
+
+/**/
+	var sb = new jsx.lang.StringBuffer();
+	var names = session.getAttributeNames();
+	names.each(function(_name)
+	{
+		sb.append(_name+" = "+session.getAttribute(_name)+"<br />");
+	})
+	document.write(sb);
+
+	session.removeAttribute("11");
+	session.removeAttribute("12");
+	session.removeAttribute("13");
+	session.removeAttribute("14");
+	session.removeAttribute("15");
+	session.removeAttribute("16");
+	session.removeAttribute("17");
+	session.removeAttribute("18");
+	session.removeAttribute("19");
+	session.removeAttribute("20");
+
+	var sb = new jsx.lang.StringBuffer();
+	var names = session.getAttributeNames();
+	names.each(function(_name)
+	{
+		sb.append(_name+" = "+session.getAttribute(_name)+"<br />");
+	})
+	document.write(sb);
+
+//	session.invalidate();
+
+	//]]>
+	</script>
+
+</body>
+</html>

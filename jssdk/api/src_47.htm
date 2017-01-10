@@ -1,0 +1,145 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> 
+<span class='linenumber'>  7</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>  8</span> 	* Specifies if the "g" modifier is set.
+<span class='linenumber'>  9</span> 	* @name global
+<span class='linenumber'> 10</span> 	* @memberOf RegExp
+<span class='linenumber'> 11</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$global$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 14</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 15</span> 	* Specifies if the "i" modifier is set.
+<span class='linenumber'> 16</span> 	* @name ignoreCase
+<span class='linenumber'> 17</span> 	* @memberOf RegExp
+<span class='linenumber'> 18</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 19</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 20</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$ignoreCase$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 21</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 22</span> 	* Specifies if the "m" modifier is set.
+<span class='linenumber'> 23</span> 	* @name multiline
+<span class='linenumber'> 24</span> 	* @memberOf RegExp
+<span class='linenumber'> 25</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 26</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 27</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$multiline$_</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 28</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 29</span> 	* The string on which the pattern match is performed.
+<span class='linenumber'> 30</span> 	* @name input
+<span class='linenumber'> 31</span> 	* @memberOf RegExp
+<span class='linenumber'> 32</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 33</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 34</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$input$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 35</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 36</span> 	* An integer specifying the index at which to start the next match.
+<span class='linenumber'> 37</span> 	* @name lastIndex
+<span class='linenumber'> 38</span> 	* @memberOf RegExp
+<span class='linenumber'> 39</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 40</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 41</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$lastIndex$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 42</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 43</span> 	* The last matched characters.
+<span class='linenumber'> 44</span> 	* @name lastMatch
+<span class='linenumber'> 45</span> 	* @memberOf RegExp
+<span class='linenumber'> 46</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 47</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$lastMatch$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 50</span> 	* The last matched parenthesized substring.
+<span class='linenumber'> 51</span> 	* @name lastParen
+<span class='linenumber'> 52</span> 	* @memberOf RegExp
+<span class='linenumber'> 53</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 54</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 55</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$lastParen$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 56</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 57</span> 	* The substring in front of the characters most recently matched.
+<span class='linenumber'> 58</span> 	* @name leftContext
+<span class='linenumber'> 59</span> 	* @memberOf RegExp
+<span class='linenumber'> 60</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 61</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 62</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$leftContext$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 63</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 64</span> 	* The substring after the characters most recently matched.
+<span class='linenumber'> 65</span> 	* @name rightContext
+<span class='linenumber'> 66</span> 	* @memberOf RegExp
+<span class='linenumber'> 67</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 68</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 69</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$rightContext$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 70</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 71</span> 	* The text used for pattern matching.
+<span class='linenumber'> 72</span> 	* @name source
+<span class='linenumber'> 73</span> 	* @memberOf RegExp
+<span class='linenumber'> 74</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 75</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 76</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$source$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"don't use me, used for reflection."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 77</span> 
+<span class='linenumber'> 78</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 79</span> 	* Change the regular expression (what to search for).
+<span class='linenumber'> 80</span> 	* @name compile
+<span class='linenumber'> 81</span> 	* @param {String} _string
+<span class='linenumber'> 82</span> 	* @function
+<span class='linenumber'> 83</span> 	* @memberOf RegExp
+<span class='linenumber'> 84</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 85</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 86</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$compile$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_string</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 87</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 88</span> 	* Search a string for a specified value. Returns the found value and remembers the position.
+<span class='linenumber'> 89</span> 	* @name exec
+<span class='linenumber'> 90</span> 	* @param {String} _string
+<span class='linenumber'> 91</span> 	* @return {String}
+<span class='linenumber'> 92</span> 	* @function
+<span class='linenumber'> 93</span> 	* @memberOf RegExp
+<span class='linenumber'> 94</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 95</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 96</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$exec$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_string</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 97</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'> 98</span> 	* Search a string for a specified value. Returns true or false.
+<span class='linenumber'> 99</span> 	* @name test
+<span class='linenumber'>100</span> 	* @param {String} _string
+<span class='linenumber'>101</span> 	* @return {Boolean}
+<span class='linenumber'>102</span> 	* @function
+<span class='linenumber'>103</span> 	* @memberOf RegExp
+<span class='linenumber'>104</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>105</span> </span><span class="WHIT">	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'>106</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype._$test$_</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_string</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"don't call me, used for reflection."</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>107</span> 
+<span class='linenumber'>108</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='linenumber'>109</span> 	* Returns whether this object is equal to the specified _object.
+<span class='linenumber'>110</span> 	* @param {Object} _object
+<span class='linenumber'>111</span> 	* @return {Boolean}
+<span class='linenumber'>112</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>113</span> </span><span class="WHIT">	</span><span class="NAME">RegExp.prototype.equals</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>114</span> </span><span class="WHIT">	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>115</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>116</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>117</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>118</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>119</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.getClass</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">isInstance</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>120</span> </span><span class="WHIT">		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>121</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>122</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>123</span> 
+<span class='linenumber'>124</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>125</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>126</span> 
+<span class='linenumber'>127</span> 
+<span class='linenumber'>128</span> </span><span class="NAME">RegExp.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>129</span> </span><span class="NAME">RegExp.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"RegExp"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>130</span> </span><span class="NAME">RegExp.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>131</span> </span><span class="NAME">RegExp.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>132</span> </span><span class="NAME">RegExp.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>133</span> </span><span class="NAME">RegExp.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>134</span> </span><span class="NAME">RegExp.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">RegExp.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>135</span> </span><span class="NAME">RegExp.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">RegExp.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>136</span> </span><span class="NAME">RegExp.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">RegExp.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>137</span> </span><span class="NAME">RegExp.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>138</span> </span></pre></body></html>

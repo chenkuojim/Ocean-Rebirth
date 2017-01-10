@@ -1,0 +1,126 @@
+<!--
+/*
+ * JavaScript Software Development Kit - what JavaScript should be and can be - js-sdk.sourceforge.net
+ * Copyright (C) 2006-2007 Mathew Sheets
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
+-->
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="RuntimeLoaderConfig.js" type="text/javascript" language="javascript"></script>
+	<script src="RuntimeLoader.js" type="text/javascript" language="javascript"></script>
+	<script src="LibraryBootstrap.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+
+<div id="clickme">click me</div>
+</ br>
+<a href="http://www.yahoo.com">yahoo</a>
+</ br>
+
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+
+	var MyObject = function(){}
+	MyObject.prototype.onfireMyEvent = null;
+
+	var myObject = new MyObject();
+	var testEventDispatcher = new jsx.event.EventDispatcher(myObject, "onfireMyEvent");
+	testEventDispatcher.addListener(function(){alert("MyObject One");});
+	testEventDispatcher.addListener(function(){alert("MyObject Two");});
+	testEventDispatcher.addListener(function(){alert("MyObject Three");});
+	testEventDispatcher.addListener(function(){alert("MyObject Four");});
+
+	var clickmeEventDispatcher = new jsx.event.EventDispatcher(document.getElementById("clickme"), "onclick");
+
+	var funct = function(){alert("See me after 5 seconds, global function");}
+	clickmeEventDispatcher.addListener(function()
+	{
+		new jsx.lang.Thread(funct, null, [], 5000).start();
+	});
+
+	clickmeEventDispatcher.addListener(function()
+	{
+		new jsx.lang.Thread(function(){alert("See me after 10 seconds, anonymous function")}, null, [], 10000).start();
+	});
+
+	clickmeEventDispatcher.addListener(function(){alert("anonymous function");});
+
+	var funct2 = function(){alert("global function");}
+	clickmeEventDispatcher.addListener(funct2);
+
+	clickmeEventDispatcher.addListener(function(_event)
+	{
+		alert(new jsx.event.Event(_event).getObject())
+	});
+
+	clickmeEventDispatcher.addListener(function(_event)
+	{
+		myObject.onfireMyEvent({target:myObject,type:"fireMyEvent"});
+	});
+
+
+
+
+
+	(function(limit, delay)
+	{
+		var queue = new Array(10);
+		var n = 0;
+
+		function loop()
+		{
+			if (n < limit)
+			{
+				process(n);
+				n += 1;
+				setTimeout(loop, delay);
+			}
+		}
+
+		function process(n)
+		{
+			queue.push(makeSpan(n));
+			var s = queue.shift();
+			if(s)
+			{
+				s.parentNode.removeChild(s);
+			}
+		}
+
+		function makeSpan(n)
+		{
+			var s = document.createElement('span');
+			document.body.appendChild(s);
+			var t = document.createTextNode(' ' + n);
+			s.appendChild(t);
+
+			new jsx.event.EventDispatcher(s, "onclick").addListener(function(_event)
+			{
+				s.style.backgroundColor = 'red';
+				alert(n);
+			});
+
+			return s;
+		}
+
+		loop();
+	})(10000, 1);
+
+//]]>
+</script>
+
+</body>
+</html>

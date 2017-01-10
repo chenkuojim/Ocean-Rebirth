@@ -1,0 +1,13 @@
+Class
+Object
+Array
+Boolean
+Date
+Function
+Math
+Number
+RegExp
+String
+StringBuffer
+Closure
+Thread

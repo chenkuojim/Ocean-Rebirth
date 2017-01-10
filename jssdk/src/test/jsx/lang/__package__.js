@@ -1,0 +1,14 @@
+ClassTest
+ObjectTest
+ArrayTest
+BooleanTest
+ClosureTest
+DateTest
+FunctionTest
+MathTest
+MyObjectTest
+NumberTest
+RegExpTest
+StringTest
+StringBufferTest
+LangTests

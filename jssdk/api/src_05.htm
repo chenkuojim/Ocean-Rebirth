@@ -1,0 +1,144 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview Resizable-array implementation of the jsx.collections.List interface.
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class ArrayList
+<span class='linenumber'>  8</span> 	* @constructor
+<span class='linenumber'>  9</span> 	* @extends jsx.collections.AbstractList
+<span class='linenumber'> 10</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 11</span> 	</span><span class="NAME">jsx.collections.ArrayList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 12</span> </span><span class="NAME">jsx.collections.ArrayList.prototype</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 13</span> </span><span class="NAME">jsx.collections.ArrayList.prototype.constructor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 14</span> </span><span class="NAME">jsx.collections.ArrayList.superclass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">jsx.collections.AbstractList.prototype</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 15</span> 
+<span class='linenumber'> 16</span> 	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 17</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_collection</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 18</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 19</span> 		</span><span class="NAME">this.entryItems</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 20</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_collection</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 21</span> 		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 22</span> 			</span><span class="NAME">this.entryItems</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_collection.toArray</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 23</span> 		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 24</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 25</span> 
+<span class='linenumber'> 26</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 27</span> 	* Returns a list view of the entries.
+<span class='linenumber'> 28</span> 	* @return {jsx.collection.List}
+<span class='linenumber'> 29</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 30</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.entryList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 31</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 32</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 33</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 34</span> 
+<span class='linenumber'> 35</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 36</span> 	* Returns the size of the list.
+<span class='linenumber'> 37</span> 	* @return {Number}
+<span class='linenumber'> 38</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 39</span>     </span><span class="NAME">jsx.collections.ArrayList.prototype.size</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 40</span>     </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 41</span>     	</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems.length</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 42</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 43</span> 
+<span class='linenumber'> 44</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 45</span> 	* Inserts the specified element at the specified position in this list.
+<span class='linenumber'> 46</span> 	* @param {Number} _index
+<span class='linenumber'> 47</span> 	* @param {Object} _object
+<span class='linenumber'> 48</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 49</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.addAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 50</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 51</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 52</span> 		</span><span class="COMM">// adding at _index, removing 0 items</span><span class="WHIT">
+<span class='linenumber'> 53</span> 		</span><span class="NAME">this.entryItems.splice</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 54</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 55</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 56</span> 
+<span class='linenumber'> 57</span> 
+<span class='linenumber'> 58</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 59</span> 	* Removes and returns the element at the specified position in this list.
+<span class='linenumber'> 60</span> 	* @param {Number} _index
+<span class='linenumber'> 61</span> 	* @return {Object}
+<span class='linenumber'> 62</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 63</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.removeAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 64</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 65</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 66</span> 
+<span class='linenumber'> 67</span> 		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">items</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.entryItems.splice</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 68</span> 
+<span class='linenumber'> 69</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">items.length</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 70</span> 
+<span class='linenumber'> 71</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 72</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 73</span> 
+<span class='linenumber'> 74</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 75</span> 	* Returns the element at the specified position in this list.
+<span class='linenumber'> 76</span> 	* @param {Number} _index
+<span class='linenumber'> 77</span> 	* @return {Object}
+<span class='linenumber'> 78</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 79</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.get</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 80</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 81</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.entryItems</span><span class="PUNC">[</span><span class="NAME">_index</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 82</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 83</span> 
+<span class='linenumber'> 84</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 85</span> 	* Replaces the element at the specified position in this list with the specified element. Returns the element previously at the specified position.
+<span class='linenumber'> 86</span> 	* @param {Number} _index
+<span class='linenumber'> 87</span> 	* @param {Object} _object
+<span class='linenumber'> 88</span> 	* @return {Object}
+<span class='linenumber'> 89</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 90</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.set</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 91</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 92</span> 		</span><span class="NAME">this.entryItems</span><span class="PUNC">[</span><span class="NAME">_index</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 93</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 94</span> 
+<span class='linenumber'> 95</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 96</span> 	* Returns a view of the portion of this list between fromIndex, inclusive, and toIndex, exclusive.
+<span class='linenumber'> 97</span> 	* @param {Number} _fromIndex
+<span class='linenumber'> 98</span> 	* @param {Number} _toIndex
+<span class='linenumber'> 99</span> 	* @reutrn {jsx.collections.List}
+<span class='linenumber'>100</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>101</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.subList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_fromIndex</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_toIndex</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>102</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>103</span> 		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">sublist</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>104</span> 
+<span class='linenumber'>105</span> 		</span><span class="NAME">this.inject</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_memo</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_index</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>106</span> 		</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>107</span> 			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NAME">_fromIndex</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">_index</span><span class="WHIT"> </span><span class="PUNC">&lt;=</span><span class="WHIT"> </span><span class="NAME">_toIndex</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>108</span> 			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>109</span> 				</span><span class="NAME">sublist.add</span><span class="PUNC">(</span><span class="NAME">_value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>110</span> 			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>111</span> 
+<span class='linenumber'>112</span> 			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_memo</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>113</span> 		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>114</span> 
+<span class='linenumber'>115</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">sublist</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>116</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>117</span> 
+<span class='linenumber'>118</span> 	</span><span class="COMM">/**
+<span class='linenumber'>119</span> 	* Removes all elements in the collection.
+<span class='linenumber'>120</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>121</span> 	</span><span class="NAME">jsx.collections.ArrayList.prototype.clear</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'>122</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'>123</span> 		</span><span class="NAME">this.entryItems.length</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>124</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>125</span> 
+<span class='linenumber'>126</span> 
+<span class='linenumber'>127</span> </span><span class="NAME">jsx.collections.ArrayList.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>128</span> </span><span class="NAME">jsx.collections.ArrayList.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.ArrayList"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>129</span> </span><span class="NAME">jsx.collections.ArrayList.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.collections.AbstractList"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>130</span> </span><span class="NAME">jsx.collections.ArrayList.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.AbstractList"</span><span class="PUNC">,</span><span class="STRN">"jsx.collections.List"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>131</span> </span><span class="NAME">jsx.collections.ArrayList.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">"jsx.collections.List"</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>132</span> </span><span class="NAME">jsx.collections.ArrayList.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>133</span> </span><span class="NAME">jsx.collections.ArrayList.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>134</span> </span><span class="NAME">jsx.collections.ArrayList.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.collections.ArrayList.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>135</span> </span><span class="NAME">jsx.collections.ArrayList.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.collections.ArrayList.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'>136</span> </span><span class="NAME">jsx.collections.ArrayList.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'>137</span> </span></pre></body></html>

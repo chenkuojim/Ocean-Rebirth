@@ -1,0 +1,64 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.linenumber {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='linenumber'>  1</span> <span class="WHIT">
+<span class='linenumber'>  2</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  3</span> 	* @fileOverview
+<span class='linenumber'>  4</span> 	* @example
+<span class='linenumber'>  5</span> 	*/</span><span class="WHIT">
+<span class='linenumber'>  6</span> 	</span><span class="COMM">/**
+<span class='linenumber'>  7</span> 	* @class Closure
+<span class='linenumber'>  8</span> 	* @constructor
+<span class='linenumber'>  9</span> 	* @description A Closure is a function that is evaluated in an environment containing one or more bound variables.
+<span class='linenumber'> 10</span> 	*  When called, the function can access these variables. In this case the _block parameter in the bind method will have
+<span class='linenumber'> 11</span> 	*  access to variable in the same scope as where the closure is defined.
+<span class='linenumber'> 12</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 13</span> 	</span><span class="NAME">jsx.lang.Closure</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="NAME">this.initialize.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 14</span> 
+<span class='linenumber'> 15</span> 	</span><span class="COMM">/** @ignore */</span><span class="WHIT">
+<span class='linenumber'> 16</span> 	</span><span class="NAME">jsx.lang.Closure.prototype.initialize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 17</span> 
+<span class='linenumber'> 18</span> 	</span><span class="COMM">/**
+<span class='linenumber'> 19</span> 	* Returns a Function. The _object parameter is appended to the _args parameter when the _block is excuted. If the
+<span class='linenumber'> 20</span> 	*  Closure is bound to an event, the event is appended to the _args parameter when the _block is executed.
+<span class='linenumber'> 21</span> 	* @param {Function} _block Block to execute
+<span class='linenumber'> 22</span> 	* @param {Object} _object Context Object
+<span class='linenumber'> 23</span> 	* @param {Array} [_args] Array of parameters to pass into the block
+<span class='linenumber'> 24</span> 	* @return {Function}
+<span class='linenumber'> 25</span> 	*/</span><span class="WHIT">
+<span class='linenumber'> 26</span> 	</span><span class="NAME">jsx.lang.Closure.prototype.bind</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_block</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_object</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_args</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 27</span> 	</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 28</span> 		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_args</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 29</span> 
+<span class='linenumber'> 30</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">_event</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 31</span> 
+<span class='linenumber'> 32</span> 			</span><span class="NAME">_args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_args.concat</span><span class="PUNC">(</span><span class="PUNC">[</span><span class="NAME">_object</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 33</span> 
+<span class='linenumber'> 34</span> 			</span><span class="COMM">// both _event or global object event could be null, which means the result could be null if this closure</span><span class="WHIT">
+<span class='linenumber'> 35</span> 			</span><span class="COMM">// is not bound to an event</span><span class="WHIT">
+<span class='linenumber'> 36</span> 			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_event</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_event</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">$GLOBAL_OBJECT.event</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 37</span> 			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">_event</span><span class="PUNC">)</span><span class="WHIT">
+<span class='linenumber'> 38</span> 			</span><span class="PUNC">{</span><span class="WHIT">
+<span class='linenumber'> 39</span> 				</span><span class="NAME">_args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_args.concat</span><span class="PUNC">(</span><span class="PUNC">[</span><span class="NAME">_event</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 40</span> 
+<span class='linenumber'> 41</span> 			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 42</span> 
+<span class='linenumber'> 43</span> 			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_block.apply</span><span class="PUNC">(</span><span class="NAME">_object</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 44</span> 		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 45</span> 	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 46</span> 
+<span class='linenumber'> 47</span> </span><span class="NAME">jsx.lang.Closure.PACKAGE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.lang"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 48</span> </span><span class="NAME">jsx.lang.Closure.CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"jsx.lang.Closure"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 49</span> </span><span class="NAME">jsx.lang.Closure.SUPER_CLASS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 50</span> </span><span class="NAME">jsx.lang.Closure.IMPORTS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 51</span> </span><span class="NAME">jsx.lang.Closure.INTERFACES</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 52</span> </span><span class="NAME">jsx.lang.Closure.MIXINS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 53</span> </span><span class="NAME">jsx.lang.Closure.getName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Closure.CLASS</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 54</span> </span><span class="NAME">jsx.lang.Closure.klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Class</span><span class="PUNC">(</span><span class="NAME">jsx.lang.Closure.getName</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 55</span> </span><span class="NAME">jsx.lang.Closure.prototype.getClass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">jsx.lang.Closure.klass</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='linenumber'> 56</span> </span><span class="NAME">jsx.lang.Closure.WARNINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='linenumber'> 57</span> </span></pre></body></html>

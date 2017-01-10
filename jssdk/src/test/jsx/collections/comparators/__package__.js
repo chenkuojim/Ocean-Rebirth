@@ -1,0 +1,5 @@
+NumericComparatorTest
+CurrencyComparatorTest
+DateComparatorTest
+StringComparatorTest
+ComparatorsTests
